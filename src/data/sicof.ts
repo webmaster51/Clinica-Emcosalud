@@ -2,7 +2,7 @@ export const sicofSubtitle =
   'Subsistema de Administración del Riesgo de Corrupción, Opacidad y Fraude';
 
 export const sicofObjective =
-  'Es un Subsistema de Administración del Riesgo de Corrupción, Opacidad y Fraude por el cual se logrará prevenir, controlar y mitigar los riesgos de la Empresa Cooperativa de Servicios de Salud Emcosalud.';
+  'Es un Subsistema de Administración del Riesgo de Corrupción, Opacidad y Fraude por el cual se logrará prevenir, controlar y mitigar los riesgos de Sociedad Clínica Emcosalud.';
 
 export const sicofGeneralConcepts: { title: string; description: string }[] = [
   {

@@ -2,7 +2,7 @@ export const sarlaftIntro =
   'Aquí podrás encontrar el formulario SARLAFT que necesitas diligenciar. Te invitamos a descargarlo y completarlo con la información requerida para cumplir con las regulaciones vigentes en materia de prevención de lavado de activos y financiación del terrorismo. Si tienes alguna duda durante el proceso, no dudes en consultarnos.';
 
 export const sarlaftFormHref =
-  '/documents/sarlaft/formato-conocimiento-cliente.xlsx';
+  '/documents/sarlaft/FORMATO-CONOCIMIENTO-CLIENTES-CLINICA-SARLAFT_FPADM-SICOF-V1.xlsx';
 
 export const sarlaftContactEmail = 'sarlaft@emcosalud.com';
 

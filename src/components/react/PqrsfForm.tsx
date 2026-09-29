@@ -92,9 +92,6 @@ export default function PqrsfForm() {
     }
   };
 
-  const showhuila = form.department === 'HUILA';
-  const showtolima = form.department === 'TOLIMA';
-
   if (submitted) {
     return (
       <div className="space-y-4 rounded-xl border border-brand-green/30 bg-brand-green/5 p-5 text-center">
@@ -214,74 +211,6 @@ export default function PqrsfForm() {
             onChange={(event) => update('NumDoc', event.target.value)}
           />
         </div>
-
-        <div>
-          <label className={labelClass} htmlFor="pqrsf-department">
-            Departamento *
-          </label>
-          <select
-            id="pqrsf-department"
-            className={fieldClass}
-            required
-            value={form.department}
-            onChange={(event) => {
-              update('department', event.target.value);
-              update('sedeshuila', '');
-              update('sedestolima', '');
-            }}
-          >
-            <option value="">— Por favor, elige una opción —</option>
-            {departamento.map((dep) => (
-              <option key={dep} value={dep}>
-                {dep}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        {showhuila && (
-          <div>
-            <label className={labelClass} htmlFor="sedeshuila">
-              Sede *
-            </label>
-            <select
-              id="sedeshuila"
-              className={fieldClass}
-              required
-              value={form.sedeshuila}
-              onChange={(event) => update('sedeshuila', event.target.value)}
-            >
-              <option value="">— Por favor, elige una opción —</option>
-              {sedeshuila.map((sede) => (
-                <option key={sede} value={sede}>
-                  {sede}
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
-
-        {showtolima && (
-          <div>
-            <label className={labelClass} htmlFor="sedestolima">
-              Sede *
-            </label>
-            <select
-              id="sedestolima"
-              className={fieldClass}
-              required
-              value={form.sedestolima}
-              onChange={(event) => update('sedestolima', event.target.value)}
-            >
-              <option value="">— Por favor, elige una opción —</option>
-              {sedestolima.map((sede) => (
-                <option key={sede} value={sede}>
-                  {sede}
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
 
         <div>
           <label className={labelClass} htmlFor="pqrsf-description">

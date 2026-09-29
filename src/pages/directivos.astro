@@ -1,0 +1,125 @@
+---
+import Icon from '@/components/icons/Icon.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+// 1. Definimos la interfaz para los directivos
+interface Director {
+  id: number;
+  name: string;
+  position: string; // Cargo (ej. Gerente General, Presidente, etc.)
+  email: string | null;
+  photo: string | null; // Ruta de la imagen local (ej. en la carpeta public)
+}
+
+// 2. Información estática directa
+const directivosList: Director[] = [
+  {
+    id: 1,
+    name: "Dr. Abel Fernely Sepúlveda Ramos",
+    position: "Gerente General",
+    email: "gerencia@emcosalud.com",
+    photo: "/images/directivos/Abel.png"
+  },
+  {
+    id: 2,
+    name: "Dr. Juan Carlos Gómez Rubiano",
+    position: "Subgerencia General",
+    email: "subgerencia@emcosalud.com",
+    photo: "/images/directivos/juan.png"
+  },
+  {
+    id: 3,
+    name: "Dra. Elvia Esperanza Castro Torres",
+    position: "Subgerencia de Aseguramiento",
+    email: "direccion.aseguramietno@emcosalud.com",
+    photo: "/images/directivos/esperanza.png"
+  },
+  {
+    id: 4,
+    name: "Dra. Nubia Rocío Hernández Rojas",
+    position: "Subgerencia de Calidad y Auditoria Médica",
+    email: "direccion.calidad@emcosalud.com",
+    photo: "/images/directivos/Rocio.png"
+  }
+];
+
+const directivosIntro = "Conozca al equipo directivo y los miembros que lideran la administración y gestión de nuestra entidad conforme a los lineamientos institucionales.";
+---
+
+<BaseLayout
+  title="Directivos y Junta Directiva"
+  description="Conozca al equipo directivo, junta directiva y alta gerencia de la entidad."
+>
+  {/* Cabecera de la sección */}
+  <section class="bg-brand-blue py-12 text-white md:py-14">
+    <div class="container-page">
+      <p class="mb-2 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-brand-green-light">
+        <Icon name="users" size={18} />
+        Institucional
+      </p>
+      <h1 class="m-0 text-3xl font-bold md:text-4xl">Directivos</h1>
+    </div>
+  </section>
+
+  {/* Contenido Principal */}
+  <section class="section-block py-12">
+    <div class="container-page max-w-5xl">
+      <p class="section-lead mb-10 text-slate-600 text-lg">{directivosIntro}</p>
+
+      {directivosList.length === 0 ? (
+        <p class="text-slate-500 text-center py-12 bg-slate-50 rounded-2xl border border-slate-200">
+          No hay información de directivos disponible en este momento.
+        </p>
+      ) : (
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {
+            directivosList.map((director: Director) => {
+              // Si no tiene foto definida, se muestra una imagen por defecto
+              const photoSrc = director.photo || '/images/default-avatar.png';
+
+              return (
+                <div class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-brand-sm transition hover:border-brand-green hover:shadow-brand">
+                  
+                  {/* Contenedor de la fotografía */}
+                  <div class="relative h-72 w-72 mx-auto overflow-hidden rounded-2xl bg-slate-100 flex items-center justify-center">
+                    <img
+                        src={photoSrc}
+                        alt={`Fotografía de ${director.name}`}
+                        class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                        loading="lazy"
+                    />
+                    </div>
+
+                  {/* Información del directivo */}
+                  <div class="flex flex-1 flex-col p-6 text-center sm:text-left">
+                    <span class="inline-block self-center sm:self-start rounded-full bg-brand-green/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand-green-dark mb-2">
+                      {director.position}
+                    </span>
+                    
+                    <h2 class="m-0 text-xl font-bold text-brand-blue">
+                      {director.name}
+                    </h2>
+                    {/* Datos de contacto opcionales */}
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex flex-col gap-2 text-xs text-slate-500">
+                      {director.email && (
+                        <a href={`mailto:${director.email}`} class="inline-flex items-center gap-2 hover:text-brand-blue transition">
+                            <span class="text-brand-green-dark">
+                            {/* Cambia "envelope" por "mail" o el nombre que use tu archivo Icon.astro */}
+                            <Icon name="mail" size={14} /> 
+                            </span>
+                            {director.email}
+                        </a>
+                        )}
+                    
+                    </div>
+
+                  </div>
+                </div>
+              );
+            })
+          }
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

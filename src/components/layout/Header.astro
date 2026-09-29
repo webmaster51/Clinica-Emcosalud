@@ -4,28 +4,27 @@ import Icon from '@/components/icons/Icon.astro';
 import SocialLinks from '@/components/layout/SocialLinks.astro';
 import NavDropdown from '@/components/layout/NavDropdown.astro';
 import MobileMenu from '@/components/react/MobileMenu';
-import SolicitarCitaButton from '@/components/react/SolicitarCitaButton';
 import { mainNavigation } from '@/data/navigation';
 import { site } from '@/data/site';
 ---
 
 <header class="sticky top-0 z-30 shadow-brand-sm">
-  <div class="bg-brand-blue-dark text-sm text-white">
+  <div class="bg-brand-blue text-sm text-white">
     <div class="container-page flex flex-wrap items-center justify-between gap-2 py-1.5">
       <p class="m-0 flex flex-wrap gap-4">
         <a
-          href={`tel:${site.phones.huila.tel}`}
+          href={`tel:${site.phones.neiva.tel}`}
           class="inline-flex items-center gap-1.5 text-white no-underline transition hover:text-brand-green-light"
         >
           <Icon name="phone" size={14} />
-          Huila: {site.phones.huila.label}
+          Neiva: {site.phones.neiva.label}
         </a>
         <a
-          href={`tel:${site.phones.tolima.tel}`}
+          href={`tel:${site.phones.bogota.tel}`}
           class="inline-flex items-center gap-1.5 text-white no-underline transition hover:text-brand-green-light"
         >
           <Icon name="phone" size={14} />
-          Tolima: {site.phones.tolima.label}
+          Bogotá: {site.phones.bogota.label}
         </a>
       </p>
       <SocialLinks
@@ -78,7 +77,6 @@ import { site } from '@/data/site';
       </nav>
 
       <div class="flex items-center gap-3">
-        <SolicitarCitaButton client:load />
         <div class="lg:hidden">
           <MobileMenu client:load items={mainNavigation} />
         </div>

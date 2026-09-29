@@ -1,38 +1,132 @@
 ---
-import Icon from '@/components/icons/Icon.astro';
-import AtencionUsuarioHero from '@/components/sections/AtencionUsuarioHero.astro';
-import { humanizacionContent } from '@/data/atencion-usuario';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import AtencionUsuarioHero from '@/components/sections/AtencionUsuarioHero.astro';
+import Icon from '@/components/icons/Icon.astro';
+
+// Asegúrate de importar o definir atencionUsuarioAssets según la ruta de tus recursos
+// import { atencionUsuarioAssets } from '@/data/assets';
 ---
 
-<BaseLayout title="Humanización" description={humanizacionContent.description}>
-  <AtencionUsuarioHero title={humanizacionContent.title} lead={humanizacionContent.description} />
+<BaseLayout
+  title="Humanización en Salud"
+  description="Comprometidos con una atención centrada en la dignidad humana — Clínica Emcosalud."
+>
+  <AtencionUsuarioHero
+    title="Humanización en Salud"
+    lead="Comprometidos con una atención centrada en la dignidad humana, la cercanía y el respeto."
+  />
 
-  <section class="section-block bg-white">
-    <div class="container-page flex flex-col items-center">
-      <figure class="m-0 w-full max-w-[724px] overflow-hidden rounded-2xl border border-slate-200 shadow-brand-sm">
-        <img
-          src={humanizacionContent.image}
-          alt={humanizacionContent.imageAlt}
-          class="mx-auto block w-full"
-          width={724}
-          loading="lazy"
-          decoding="async"
-        />
-      </figure>
+  <section class="section-block">
+    <div class="container-page max-w-5xl">
+      
+      {/* Encabezado e Introducción */}
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-2xl font-bold text-brand-blue md:text-3xl">Humanización en Clínica Emcosalud</h2>
+        <p class="mt-2 text-brand-green-dark font-semibold text-sm uppercase tracking-wide">Comprometidos con una atención centrada en la dignidad humana</p>
+        <p class="mt-4 text-slate-700 text-base leading-relaxed">
+          En Clínica Emcosalud, entendemos que la atención médica de calidad no se limita al tratamiento de enfermedades. Nuestro compromiso va más allá: buscamos ofrecer una experiencia de cuidado profundamente humana, cercana y respetuosa, que considere al paciente como un ser integral, con historia, emociones, valores y necesidades propias.
+        </p>
+      </div>
 
-      <div class="mt-16 flex justify-center md:mt-24">
+      {/* Bloques de descripción detallada */}
+      <div class="grid gap-6 md:grid-cols-2 mb-14">
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="text-lg font-bold text-brand-blue mb-3">Comunicación y Trato Empático</h3>
+          <p class="text-sm text-slate-700 leading-relaxed">
+            La humanización del cuidado comienza desde el primer contacto con el paciente y su familia, a través de una comunicación fluida, cálida y efectiva. Promovemos un trato empático y personalizado, cuidando no solo el lenguaje verbal —lo que decimos y cómo lo decimos—, sino también el lenguaje no verbal, que transmite mensajes que impactan directamente en el bienestar emocional.
+          </p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="text-lg font-bold text-brand-blue mb-3">Reconociendo a la Persona</h3>
+          <p class="text-sm text-slate-700 leading-relaxed">
+            Humanizar no es simplemente ser cordiales o amables; es reconocer a la persona detrás de cada diagnóstico. En Clínica Emcosalud, nuestros pacientes no son un número de historia clínica ni una cama hospitalaria: son personas únicas, que merecen ser llamadas por su nombre y tratadas como quisiéramos ser tratados nosotros o nuestros seres queridos.
+          </p>
+        </div>
+      </div>
+
+      {/* DECÁLOGO DE LA HUMANIZACIÓN DEL CUIDADO */}
+      <div class="mb-14 rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+        <h3 class="text-xl font-bold text-brand-blue mb-6 text-center">Decálogo de la Humanización del Cuidado</h3>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-green/20 text-brand-green-dark font-bold text-xs">1</span>
+            <p class="text-sm text-slate-700 m-0"><strong>Establece un vínculo humano:</strong> Mira al paciente a los ojos, sonríe y preséntate con respeto.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-green/20 text-brand-green-dark font-bold text-xs">2</span>
+            <p class="text-sm text-slate-700 m-0"><strong>Reconoce su identidad:</strong> No es una patología ni un expediente, es una persona única.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-green/20 text-brand-green-dark font-bold text-xs">3</span>
+            <p class="text-sm text-slate-700 m-0"><strong>Incluye a su familia:</strong> Son una fuente fundamental de apoyo emocional y aliados en la recuperación.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-green/20 text-brand-green-dark font-bold text-xs">4</span>
+            <p class="text-sm text-slate-700 m-0"><strong>Comunica con claridad y empatía:</strong> Informa con un lenguaje comprensible y escucha con atención.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-green/20 text-brand-green-dark font-bold text-xs">5</span>
+            <p class="text-sm text-slate-700 m-0"><strong>Respeta su autonomía:</strong> Involucra al paciente en las decisiones sobre su tratamiento.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-green/20 text-brand-green-dark font-bold text-xs">6</span>
+            <p class="text-sm text-slate-700 m-0"><strong>Protege su intimidad:</strong> Garantiza privacidad y confidencialidad en todo momento.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-green/20 text-brand-green-dark font-bold text-xs">7</span>
+            <p class="text-sm text-slate-700 m-0"><strong>No juzgues ni discrimines:</strong> Brinda atención libre de prejuicios y juicios de valor.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-green/20 text-brand-green-dark font-bold text-xs">8</span>
+            <p class="text-sm text-slate-700 m-0"><strong>Prioriza su bienestar:</strong> Organiza la atención según sus necesidades físicas y emocionales.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-green/20 text-brand-green-dark font-bold text-xs">9</span>
+            <p class="text-sm text-slate-700 m-0"><strong>Ejercita la empatía:</strong> Sé sensible ante el sufrimiento y cuida también de ti mismo.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+            <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-green/20 text-brand-green-dark font-bold text-xs">10</span>
+            <p class="text-sm text-slate-700 m-0"><strong>Preserva su dignidad:</strong> Cada paciente merece respeto y humanidad en todo momento.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* ATENCIÓN HUMANIZADA – CÓDIGO AZUL – GESTIÓN DEL DUELO */}
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
+        <h3 class="text-xl font-bold text-brand-blue mb-4">Atención Humanizada – Código Azul – Gestión del Duelo</h3>
+        <div class="space-y-4 text-sm text-slate-700 leading-relaxed">
+          <p>
+            En la Sociedad Clínica Emcosalud, brindamos una atención clínica integral, centrada en el respeto, la dignidad y la humanidad del paciente en el final de la vida. Implementamos el <strong>Código Azul</strong> como una estrategia institucional que permite identificar y acompañar a pacientes en fase final, ofreciendo un cuidado compasivo y humanizado.
+          </p>
+          <p>
+            Nuestro equipo de salud está capacitado para garantizar el control adecuado de síntomas, aliviando el dolor, la disnea y cualquier incomodidad, con el objetivo de proporcionar al paciente una partida en condiciones de serenidad, respeto y bienestar.
+          </p>
+          <p>
+            Además, comprendemos el impacto emocional en los familiares, por lo que promovemos su acompañamiento, brindando contención y apoyo en la gestión del duelo, en un entorno hospitalario de respeto y cercanía.
+          </p>
+          <p>
+            El Código Azul también contempla el cuidado del equipo sanitario, generando espacios de reflexión y fortalecimiento emocional, entendiendo que la atención al final de la vida implica un compromiso humano profundo.
+          </p>
+          <p class="font-medium text-brand-blue pt-2">
+            En Clínica Emcosalud reafirmamos nuestro compromiso con una atención médica humanizada, especialmente en los momentos más sensibles de la vida.
+          </p>
+        </div>
+      </div>
+
+      {/* Botón Final */}
+      <div class="mt-10 text-center">
         <a
-          href={humanizacionContent.resolucion.href}
+          href='/public/images/humanizacion/HUMANIZACION-EN-CLINICA-EMCOSALUD.pdf'
           target="_blank"
           rel="noopener noreferrer"
-          class="btn btn--primary inline-flex items-center gap-2 no-underline"
+          class="btn btn--primary inline-flex items-center gap-2 no-underline px-8 py-3 text-base"
         >
-          <Icon name="document" size={18} />
-          {humanizacionContent.resolucion.label}
-          <Icon name="external" size={14} />
+          <Icon name="document" size={20} />
+          Ver Documento
+          <Icon name="external" size={16} />
         </a>
       </div>
+
     </div>
   </section>
 </BaseLayout>

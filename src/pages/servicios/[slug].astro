@@ -1,0 +1,137 @@
+---
+import Icon from '@/components/icons/Icon.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { clinicServices } from '@/data/services';
+
+// 1. Capturamos el slug directamente de la URL actual
+const { slug } = Astro.params;
+
+// 2. Buscamos el servicio que coincida con ese ID/slug en tu archivo de datos
+const service = clinicServices.find((s) => s.id === slug);
+
+// 3. Si no existe el servicio, redirigimos al 404 de forma segura
+if (!service) {
+  return Astro.redirect('/404');
+}
+---
+
+<BaseLayout
+  title={`${service.title} — Sociedad Clínica Emcosalud`}
+  description={service.subtitle}
+>
+  {/* Cabecera de la sección (Hero) */}
+  <section class="bg-brand-blue py-12 text-white md:py-14">
+    <div class="container-page">
+      <p class="mb-2 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-brand-green-light">
+        <Icon name="chart" size={18} />
+        Detalle de Servicio
+      </p>
+      <h1 class="m-0 text-3xl font-bold md:text-4xl">
+        {service.title}
+      </h1>
+    </div>
+  </section>
+
+  <section class="section-block py-12">
+    <div class="container-page max-w-4xl">
+      
+      <div class="flex flex-col gap-8">
+        <div>
+          <a 
+            href="/servicios" 
+            class="inline-flex items-center gap-2 text-sm font-semibold text-brand-blue hover:text-brand-green-dark transition"
+          >
+            ← Volver a todos los servicios
+          </a>
+        </div>
+
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 sm:p-10 shadow-brand-sm">
+          
+          <div class="relative h-92 w-full overflow-hidden rounded-xl bg-slate-100 mb-8 flex items-center justify-center">
+            <img
+              src={service.image || "/images/default-service.jpg"}
+              alt={`Imagen de ${service.title}`}
+              class="h-full w-full object-cover"
+              loading="lazy"
+            />
+          </div>
+
+          <span class="inline-block rounded-full bg-brand-green/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand-green-dark mb-3">
+            {service.subtitle}
+          </span>
+
+          <h2 class="text-2xl font-bold text-brand-blue m-0">{service.title}</h2>
+          
+          <p class="mt-4 text-base text-slate-700 leading-relaxed">
+            {service.description}
+          </p>
+
+          {service.features && service.features.length > 0 && (
+            <div class="mt-8">
+              <h3 class="text-lg font-bold text-brand-blue mb-4">Lo que te ofrecemos:</h3>
+              <ul class="grid gap-3">
+                {service.features.map(feature => (
+                  <li class="flex items-start gap-3 text-slate-700 text-sm">
+                    <span class="text-brand-green-dark font-bold mt-0.5">✓</span>
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {service.extraContent && service.extraContent.length > 0 && (
+            <div class="mt-8 grid gap-4 sm:grid-cols-2">
+              {service.extraContent.map(extra => (
+                <div class="rounded-xl bg-slate-50 p-5 border border-slate-200">
+                  <h4 class="font-bold text-brand-blue text-base m-0">{extra.title}</h4>
+                  <p class="text-xs text-slate-600 mt-2 m-0 leading-relaxed">{extra.description}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {service.examList && service.examList.length > 0 && (
+            <div class="mt-8">
+                <h3 class="text-lg font-bold text-brand-blue mb-2">Preparación y Recomendaciones para Exámenes</h3>
+                <p class="text-xs text-slate-500 mb-4">Haz clic en tu examen para ver el documento de preparación:</p>
+                <div class="grid gap-2 sm:grid-cols-2">
+                {service.examList.map((exam: { name: string; url: string }) => (
+                    <a 
+                    href={exam.url} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="flex items-center justify-between rounded-xl border border-slate-200 bg-slate-50 p-3 text-xs font-medium text-brand-blue hover:border-brand-green hover:bg-white transition"
+                    >
+                    <span>{exam.name}</span>
+                    <span class="text-brand-green-dark font-bold">→</span>
+                    </a>
+                ))}
+                </div>
+            </div>
+          )}
+
+          {service.specialNote && (
+            <div class="mt-8 rounded-xl bg-brand-blue/5 p-5 border border-brand-blue/15">
+              <p class="text-sm font-medium text-brand-blue m-0">
+                {service.specialNote}
+              </p>
+            </div>
+          )}
+
+        {/* Si el servicio tiene video, muestra el reproductor grande; si no, no muestra nada */}
+        {service.video && (
+        <div class="relative w-full h-[450px] md:h-[550px] overflow-hidden rounded-xl bg-slate-900 mb-8 shadow-md">
+            <iframe
+            src={service.video}
+            title={service.title}
+            class="absolute inset-0 w-full h-full border-0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            ></iframe>
+        </div>
+        )}
+
+    </div>
+  </section>
+</BaseLayout>

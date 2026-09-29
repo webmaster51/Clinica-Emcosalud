@@ -1,8 +1,10 @@
 ---
-import Icon from '@/components/icons/Icon.astro';
-import AtencionUsuarioHero from '@/components/sections/AtencionUsuarioHero.astro';
-import { atencionUsuarioAssets } from '@/data/atencion-usuario';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import AtencionUsuarioHero from '@/components/sections/AtencionUsuarioHero.astro';
+import Icon from '@/components/icons/Icon.astro';
+
+// Asegúrate de importar o definir atencionUsuarioAssets según la estructura de tu proyecto
+// import { atencionUsuarioAssets } from '@/data/assets';
 ---
 
 <BaseLayout
@@ -15,24 +17,144 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   />
 
   <section class="section-block">
-    <div class="container-page max-w-3xl">
-      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-        <h2 class="m-0 text-lg font-bold text-brand-blue">Documento oficial</h2>
-        <p class="mt-2 text-slate-700">
-          Descarga el documento institucional con la información sobre derechos, deberes y
-          responsabilidades de los usuarios.
+    <div class="container-page max-w-5xl">
+
+      {/* Nuestro Compromiso con su Bienestar */}
+      <div class="mb-14 rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+        <h2 class="text-2xl font-bold text-brand-blue mb-4">Nuestro Compromiso con su Bienestar</h2>
+        <p class="text-slate-700 mb-4 text-base">
+          En Sociedad Clínica Emcosalud, nuestro compromiso es brindar una atención de salud integral y de calidad. Conozca sus derechos y los deberes que como usuario le corresponden para garantizar una experiencia óptima.
         </p>
-        <a
-          href={atencionUsuarioAssets.derechosDeberesPdf}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn btn--primary mt-6 inline-flex items-center gap-2 no-underline"
-        >
-          <Icon name="document" size={18} />
-          Ver o descargar PDF
-          <Icon name="external" size={14} />
-        </a>
+        <p class="text-slate-700 text-sm leading-relaxed">
+          La gerencia, directivos, profesionales y demás funcionarios de la Sociedad Clínica Emcosalud, conscientes de nuestra misión institucional de brindar un servicio de salud adecuado a las necesidades y expectativas de los usuarios, ratificamos el compromiso de garantizar sus derechos constitucionales y legales. Esta declaración se fundamenta en la adaptación de importantes normativas colombianas como la <strong>Resolución 13437 de 1991</strong>, <strong>Ley 361 de 1997</strong>, <strong>Ley 1618 de 2013</strong>, <strong>Ley 1751 de 2015</strong>, <strong>Ley 1805 de 2016</strong> y la <strong>Resolución 229 de 2020</strong>, asegurando un marco legal sólido para su protección.
+        </p>
       </div>
+
+      {/* Grid de Derechos y Deberes */}
+      <div class="grid gap-10 lg:grid-cols-2">
+        
+        {/* COLUMNA DE DERECHOS */}
+        <div class="space-y-6">
+          <div class="border-b-2 border-brand-green pb-3">
+            <h2 class="text-xl font-bold text-brand-blue uppercase tracking-wide">Sus Derechos como Usuario</h2>
+          </div>
+
+          {/* Trato Digno */}
+          <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+            <h3 class="font-bold text-brand-green-dark text-base mb-3 flex items-center gap-2">
+              <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> Trato Digno
+            </h3>
+            <ul class="space-y-2 text-sm text-slate-700 list-disc pl-5">
+              <li>Recibir servicios de salud integrales, oportunos y de alta calidad.</li>
+              <li>Recibir atención preferencial si es adulto mayor, persona con discapacidad, menor de 5 años o madre gestante.</li>
+              <li>Recibir protección especial si es niño, niña, adolescente, mujer en estado de gestación, víctima de violencia o conflicto armado, adulto mayor, persona con enfermedad huérfana o catastrófica/de alto costo.</li>
+              <li>Acceder de manera prioritaria a tratamientos psicológicos y psiquiátricos si es víctima de violencia sexual.</li>
+            </ul>
+          </div>
+
+          {/* Atención con Calidad */}
+          <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+            <h3 class="font-bold text-brand-green-dark text-base mb-3 flex items-center gap-2">
+              <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> Atención con Calidad
+            </h3>
+            <ul class="space-y-2 text-sm text-slate-700 list-disc pl-5">
+              <li>Recibir la mejor asistencia médica disponible, respetando sus deseos, incluso en caso de enfermedad irreversible.</li>
+              <li>Acreditar su identidad únicamente con el documento de identidad.</li>
+              <li>Recibir un trato digno que respete sus creencias, costumbres y opiniones personales.</li>
+              <li>Recibir servicios de salud en condiciones de higiene, seguridad y respeto a su intimidad.</li>
+              <li>Morir con dignidad y a que se respete su voluntad de permitir que el proceso de la muerte siga su curso natural en la fase terminal.</li>
+              <li>A la reserva de su historia clínica y a solicitar y recibir copia de la misma.</li>
+            </ul>
+          </div>
+
+          {/* A la Información */}
+          <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+            <h3 class="font-bold text-brand-green-dark text-base mb-3 flex items-center gap-2">
+              <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> A la Información
+            </h3>
+            <ul class="space-y-2 text-sm text-slate-700 list-disc pl-5">
+              <li>Recibir información sobre canales formales para presentar reclamos, quejas o sugerencias, y obtener respuesta escrita.</li>
+              <li>Obtener información clara, apropiada y suficiente del profesional de salud para tomar decisiones libres, conscientes e informadas, incluyendo los riesgos del tratamiento.</li>
+              <li>Conocer información sobre los costos de la atención, según su tipo de aseguramiento.</li>
+            </ul>
+          </div>
+
+          {/* A la Elección */}
+          <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+            <h3 class="font-bold text-brand-green-dark text-base mb-3 flex items-center gap-2">
+              <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> A la Elección
+            </h3>
+            <ul class="space-y-2 text-sm text-slate-700 list-disc pl-5">
+              <li>Aceptar o rechazar actividades, intervenciones, insumos, medicamentos, dispositivos, servicios, procedimientos o tratamientos, dejando constancia en el consentimiento/desistimiento informado.</li>
+              <li>Recibir o rehusar apoyo espiritual o moral.</li>
+              <li>Tomar parte activa en mecanismos de participación social como la Asociación de Usuarios, el Comité de Ética, las Veedurías, entre otros.</li>
+            </ul>
+          </div>
+        </div>
+
+        {/* COLUMNA DE DEBERES */}
+        <div class="space-y-6">
+          <div class="border-b-2 border-brand-blue pb-3">
+            <h2 class="text-xl font-bold text-brand-blue uppercase tracking-wide">Sus Deberes como Usuario</h2>
+          </div>
+
+          {/* Del Cuidado */}
+          <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+            <h3 class="font-bold text-brand-blue text-base mb-3 flex items-center gap-2">
+              <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-blue"></span> Del Cuidado
+            </h3>
+            <ul class="space-y-2 text-sm text-slate-700 list-disc pl-5">
+              <li>Procurar el cuidado integral de su salud, la de su familia y la de su comunidad para disminuir factores de riesgo.</li>
+            </ul>
+          </div>
+
+          {/* Del Cumplimiento */}
+          <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+            <h3 class="font-bold text-brand-blue text-base mb-3 flex items-center gap-2">
+              <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-blue"></span> Del Cumplimiento
+            </h3>
+            <ul class="space-y-2 text-sm text-slate-700 list-disc pl-5">
+              <li>Seguir las recomendaciones del personal de salud, incluyendo programas de promoción y prevención.</li>
+              <li>Afiliarse al Sistema General de Seguridad Social en Salud, usar adecuadamente las prestaciones y cumplir las normas.</li>
+              <li>Contribuir al financiamiento de los gastos de atención en salud y seguridad social.</li>
+              <li>Contribuir al cuidado del medio ambiente.</li>
+              <li>Adoptar las medidas de seguridad según directriz institucional.</li>
+              <li>Cumplir las normas, reglamentos e instrucciones de la Institución.</li>
+              <li>Firmar consentimientos o desistimientos informados sobre procedimientos y tratamientos.</li>
+              <li>Pagar cuotas o copagos de forma oportuna.</li>
+              <li>Presentar documento de identidad para acceder a los servicios de salud.</li>
+            </ul>
+          </div>
+
+          {/* De la Información */}
+          <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+            <h3 class="font-bold text-brand-blue text-base mb-3 flex items-center gap-2">
+              <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-blue"></span> De la Información
+            </h3>
+            <ul class="space-y-2 text-sm text-slate-700 list-disc pl-5">
+              <li>Suministrar información clara, completa y veraz al personal de salud, actuando de buena fe.</li>
+              <li>Comunicar a la familia el cuidado, atención y tratamiento prescrito por el personal de salud.</li>
+              <li>Presentar felicitaciones, quejas, reclamos y/o sugerencias sobre los servicios.</li>
+            </ul>
+          </div>
+
+          {/* Del Respeto */}
+          <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+            <h3 class="font-bold text-brand-blue text-base mb-3 flex items-center gap-2">
+              <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-blue"></span> Del Respeto
+            </h3>
+            <ul class="space-y-2 text-sm text-slate-700 list-disc pl-5">
+              <li>Brindar trato digno y humano al personal de la clínica y demás personas.</li>
+              <li>Evitar comportamientos agresivos contra el personal de salud.</li>
+              <li>Respetar la condición e intimidad de los demás usuarios, controlando el volumen de la voz.</li>
+              <li>Cuidar y hacer uso racional de los recursos de la Clínica, cumpliendo con las normas.</li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
   </section>
 </BaseLayout>

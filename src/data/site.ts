@@ -1,42 +1,36 @@
 export const site = {
-  name: 'EMCOSALUD',
-  tagline: 'Cooperativa de servicios de salud',
+  name: 'Clínica Emcosalud',
+  tagline: 'Sociedad Clínica Emcosalud',
   description:
-    'Acceso a servicios de salud, promoción y mantenimiento, citas médicas y atención en el sur colombiano.',
+    '',
   assets: {
-    logo: '/images/logo-emcosalud.png',
-    logofooter: '/images/logo emcosalud blanco.png',
-    logoAlt: 'EMCOSALUD — Cooperativa de servicios de salud',
+    logo: '/images/logo-27.png',
+    logofooter: '/images/logo-27-blanco.png',
+    logoAlt: 'Clínica Emcosalud — Sociedad Clínica Emcosalud',
   },
   phones: {
-    huila: {
-      label: '(608) 863 2041',
-      tel: '+576088632041',
+    neiva: {
+      label: '(608) 863- 0566',
+      tel: '+576088630566',
     },
-    tolima: {
-      label: '(608) 277 1669',
-      tel: '+576082771669',
+    bogota: {
+      label: '350 214 2363',
+      tel: '+573502142363',
     },
   },
   social: {
-    facebook: 'https://www.facebook.com/share/1BWkQzJXhD/?mibextid=wwXIfr',
-    instagram: 'https://www.instagram.com/emcosalud.lideresensalud/',
+    facebook: 'https://www.facebook.com/profile.php?id=100042840743577',
+    instagram: 'https://www.instagram.com/clinicaemcosalud/',
     youtube: 'https://www.youtube.com/@grupoempresarialemcosalud8869',
-    whatsapp: 'https://whatsapp.com/channel/0029VaaGjS23QxS1mwMhoD13',
-  },
-  external: {
-    clinica: 'https://clinicaemcosalud.com',
-    emcofarma: 'https://emcofarma.com',
-    escuela: 'https://escuelaemcosalud.com',
   },
   legal: {
     privacyHub: '/politica-privacidad',
     dataTreatmentPolicyPdf:
-      '/documents/politica-tratamiento-datos-emco.pdf',
+      '/documents/POLITICA-TRATRAMIENTO-DE-DATOS-SCE-V1.pdf',
     authorizationFormPdf:
-      '/documents/formulario-autorizacion-tratamiento-datos.pdf',
+      '/documents/FORMULARIO-AUTORIZACION-TRATAMIENTO-DE-DATOS-CLINICA-EMCOSALUD (1).pdf',
     cookiesPolicyPdf:
-      'https://emcofarma.com/wp-content/uploads/2025/09/POLITICA-USO-DE-COOKIES-Y-SITIO-WEB-INSTITUCIONAL.pdf',
+      '/documents/POLITICA-USO-DE-COOKIES-Y-SITIO-WEB-INSTITUCIONAL.pdf',
   },
   regulators: [
     {
@@ -64,6 +58,6 @@ export const site = {
 } as const;
 
 export const brand = {
-  blue: '#053388',
+  blue: '#0f8bd8',
   green: '#45c900',
 } as const;

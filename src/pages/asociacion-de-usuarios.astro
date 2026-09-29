@@ -1,26 +1,178 @@
 ---
-import AtencionUsuarioHero from '@/components/sections/AtencionUsuarioHero.astro';
-import { atencionUsuarioAssets } from '@/data/atencion-usuario';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+import AtencionUsuarioHero from '@/components/sections/AtencionUsuarioHero.astro';
+import Icon from '@/components/icons/Icon.astro';
+
+// Asegúrate de importar o definir atencionUsuarioAssets según la ruta de tus recursos si deseas un botón de descarga PDF
+// import { atencionUsuarioAssets } from '@/data/assets';
 ---
 
 <BaseLayout
   title="Asociación de Usuarios"
-  description="Información sobre la Asociación de Usuarios de EMCOSALUD."
+  description="Tu voz es fundamental. Conoce la Asociación de Usuarios de Emcosalud y participa activamente."
 >
   <AtencionUsuarioHero
     title="Asociación de Usuarios"
-    lead="Conoce la información institucional de la Asociación de Usuarios de EMCOSALUD."
+    lead="Tu voz es fundamental para mejorar la calidad de nuestros servicios de salud. Conoce cómo puedes participar activamente."
   />
 
   <section class="section-block">
-    <div class="container-page max-w-4xl">
-      <img
-        src={atencionUsuarioAssets.asociacionUsuariosImg}
-        alt="Asociación de Usuarios — EMCOSALUD"
-        class="mx-auto w-full max-w-3xl rounded-2xl border border-slate-200 shadow-sm"
-        loading="lazy"
-      />
+    <div class="container-page max-w-5xl">
+      
+      {/* ¿Qué es la Asociación de Usuarios? */}
+      <div class="mb-14 rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+        <h2 class="text-2xl font-bold text-brand-blue mb-4">¿Qué es la Asociación de Usuarios?</h2>
+        <p class="text-slate-700 mb-4 text-base leading-relaxed">
+          La Alianza o Asociación de Usuarios es una agrupación esencial dentro del Sistema General de Seguridad Social en Salud. Está conformada por afiliados de los regímenes contributivo y subsidiado que utilizan nuestros servicios. Su principal objetivo es velar por la calidad del servicio y defender los derechos de los usuarios en Emcosalud.
+        </p>
+        <p class="text-slate-700 text-sm leading-relaxed">
+          Todos los afiliados al Sistema General de Seguridad Social en Salud tienen el derecho a participar activamente en las instituciones del sistema, conformando estas asociaciones o alianzas. Estas representaciones son vitales ante las Instituciones Prestadoras de Servicios de Salud (IPS) y las Empresas Promotoras de Salud (EPS), tanto del orden público, mixto como privado.
+        </p>
+      </div>
+
+      {/* Constitución y Estructura & Representación (Grid de 2 columnas) */}
+      <div class="grid gap-8 lg:grid-cols-2 mb-14">
+        
+        {/* Constitución y Estructura */}
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="border-b-2 border-brand-green pb-3 mb-4">
+              <h3 class="text-xl font-bold text-brand-blue uppercase tracking-wide">Constitución y Estructura</h3>
+            </div>
+            <p class="text-sm text-slate-700 mb-4 leading-relaxed">
+              Las asociaciones de usuarios se constituyen con un número plural de usuarios convocados a una Asamblea de Constitución por la institución respectiva, manteniendo un libro de inscripción permanente para garantizar la participación continua.
+            </p>
+            <p class="text-sm font-semibold text-brand-blue mb-2">El acta de constitución debe incluir:</p>
+            <ul class="space-y-1.5 text-sm text-slate-700 list-disc pl-5 mb-4">
+              <li>Nombre de los integrantes.</li>
+              <li>Identificación de la asociación, liga o alianza.</li>
+              <li>Datos de sus integrantes (calidad de afiliado, dirección y teléfono).</li>
+              <li>Periodo para el que se ha constituido.</li>
+            </ul>
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 mb-4">
+              <p class="text-xs font-semibold text-brand-blue uppercase tracking-wider mb-2">Junta Directiva:</p>
+              <div class="grid grid-cols-2 gap-2 text-xs text-slate-700">
+                <span>• Presidente</span>
+                <span>• Secretario</span>
+                <span>• Tesorero</span>
+                <span>• Revisor Fiscal (externo)</span>
+              </div>
+            </div>
+          </div>
+          <p class="text-xs text-slate-500 italic border-t border-slate-100 pt-3">
+            * Una copia del acta debe remitirse a la Superintendencia Nacional de Salud a través de medio magnético (Circular Única – Título VII).
+          </p>
+        </div>
+
+        {/* Representación e Integrantes */}
+        <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="border-b-2 border-brand-blue pb-3 mb-4">
+              <h3 class="text-xl font-bold text-brand-blue uppercase tracking-wide">Representación e Integrantes</h3>
+            </div>
+            <p class="text-sm text-slate-700 mb-4 leading-relaxed">
+              Las alianzas o asociaciones de usuarios eligen a sus representantes en asamblea general por períodos de dos (2) años. Entre los elegidos se designan representantes para las siguientes instancias:
+            </p>
+            <ul class="space-y-2 text-sm text-slate-700 list-disc pl-5 mb-4">
+              <li>Un representante ante la Junta Directiva de la respectiva EPS (pública y mixta).</li>
+              <li>Un representante ante la Junta Directiva de la IPS hospitalaria (pública y mixta).</li>
+              <li>Un representante ante el comité de participación comunitaria.</li>
+              <li>Un representante ante el Consejo Territorial de Seguridad Social.</li>
+              <li>Dos representantes ante el Comité de Ética Hospitalaria.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="container-page max-w-4xl">
+        <img
+          src="/public/images/asociación-de-usuarios/asociacion-clinica.webp"
+          alt="Asociación de Usuarios — EMCOSALUD"
+          class="mx-auto w-full max-w-3xl rounded-2xl border border-slate-200 shadow-sm"
+          loading="lazy"
+        />
+      </div>
+      <br>
+
+      {/* Funciones Clave de la Asociación */}
+      <div class="mb-14 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
+        <div class="border-b-2 border-brand-green pb-3 mb-6">
+          <h3 class="text-xl font-bold text-brand-blue uppercase tracking-wide">Funciones Clave de la Asociación</h3>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green mt-1.5 shrink-0"></span>
+            <p class="text-sm text-slate-700 m-0">Asesorar a sus asociados en la libre elección de la EPS, IPS y/o profesionales adscritos.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green mt-1.5 shrink-0"></span>
+            <p class="text-sm text-slate-700 m-0">Asesorar a sus asociados en la identificación y acceso al paquete de servicios.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green mt-1.5 shrink-0"></span>
+            <p class="text-sm text-slate-700 m-0">Participar en las Juntas Directivas de EPS e IPS para proponer y concertar medidas de mejora en la calidad y atención.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green mt-1.5 shrink-0"></span>
+            <p class="text-sm text-slate-700 m-0">Mantener canales de comunicación con los afiliados para conocer sus inquietudes y demandas.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green mt-1.5 shrink-0"></span>
+            <p class="text-sm text-slate-700 m-0">Vigilar que las decisiones tomadas en las juntas directivas se apliquen según lo acordado.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green mt-1.5 shrink-0"></span>
+            <p class="text-sm text-slate-700 m-0">Informar a las instancias correspondientes si la calidad del servicio no satisface las necesidades de los afiliados.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green mt-1.5 shrink-0"></span>
+            <p class="text-sm text-slate-700 m-0">Proponer a las juntas directivas los días y horarios de atención al público según las necesidades de la comunidad.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green mt-1.5 shrink-0"></span>
+            <p class="text-sm text-slate-700 m-0">Vigilar que las tarifas y cuotas de recuperación correspondan a las condiciones socioeconómicas y se apliquen correctamente.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green mt-1.5 shrink-0"></span>
+            <p class="text-sm text-slate-700 m-0">Atender las quejas de los usuarios sobre deficiencias y vigilar que se tomen los correctivos del caso.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green mt-1.5 shrink-0"></span>
+            <p class="text-sm text-slate-700 m-0">Proponer medidas para mejorar la oportunidad y la calidad técnica y humana de los servicios.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green mt-1.5 shrink-0"></span>
+            <p class="text-sm text-slate-700 m-0">Ejercer veedurías en las instituciones del sector a través de sus representantes.</p>
+          </div>
+          <div class="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-200">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green mt-1.5 shrink-0"></span>
+            <p class="text-sm text-slate-700 m-0">Elegir democráticamente a sus representantes por períodos máximos de dos (2) años.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* SECCIÓN DE CONTACTO */}
+      <div class="rounded-2xl border border-brand-blue/20 bg-brand-blue/5 p-6 sm:p-8 text-center">
+        <h3 class="text-xl font-bold text-brand-blue mb-2">Comunícate con la Asociación de Usuarios</h3>
+        <p class="text-sm text-slate-700 mb-6">Estamos para escucharte y trabajar juntos por el mejoramiento continuo de los servicios de salud.</p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-6 text-sm text-slate-700">
+          <div class="flex items-center gap-2">
+            <Icon name="location" size={18} class="text-brand-green-dark" />
+            <span><strong>Oficina:</strong> Calle 5 #6-73, 2° Piso</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="phone" size={18} class="text-brand-green-dark" />
+            <span><strong>Teléfono:</strong> 6088630566 opción 3</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <Icon name="mail" size={18} class="text-brand-green-dark" />
+            <span><strong>Correo:</strong> atencion.usuario.clinica@emcosalud.com</span>
+          </div>
+        </div>
+      </div>
+
+
     </div>
   </section>
 </BaseLayout>

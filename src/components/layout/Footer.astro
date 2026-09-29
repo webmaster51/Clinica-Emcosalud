@@ -7,16 +7,17 @@ import { footerNavigation } from '@/data/navigation';
 import { site } from '@/data/site';
 
 const footerLinkIcons: Record<string, IconName> = {
-  'Clínica Emcosalud': 'hospital',
+  'Emcosalud': 'hospital',
   Emcofarma: 'pharmacy',
   'Escuela Emcosalud': 'graduation',
   'Servicios médicos': 'stethoscope',
   'Nuestras sedes': 'building',
   'Medicamentos Huila': 'pharmacy',
   'Medicamentos Tolima': 'pharmacy',
-  'Grupo empresarial': 'building',
+  'Ferrocarriles': 'building',
   'Emcofarma Plus': 'pharmacy',
     'Citas médicas': 'calendar',
+    'Cirugía': 'calendar',
   PQR: 'file-claim',
   Blog: 'blog',
   Nosotros: 'users',
@@ -26,7 +27,7 @@ const footerLinkIcons: Record<string, IconName> = {
 };
 ---
 
-<footer class="bg-brand-blue-dark text-white">
+<footer class="bg-brand-blue text-white">
   <div class="container-page grid gap-8 py-12 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
     <div>
       <Logo variant="footer" showTagline={true} />
@@ -35,19 +36,19 @@ const footerLinkIcons: Record<string, IconName> = {
         <li class="flex items-start gap-2">
           <Icon name="phone" size={18} class="mt-0.5 shrink-0 text-brand-green-light" />
           <a
-            href={`tel:${site.phones.huila.tel}`}
+            href={`tel:${site.phones.neiva.tel}`}
             class="text-white/90 no-underline hover:text-brand-green-light"
           >
-            Huila: {site.phones.huila.label}
+            Neiva: {site.phones.neiva.label}
           </a>
         </li>
         <li class="flex items-start gap-2">
           <Icon name="phone" size={18} class="mt-0.5 shrink-0 text-brand-green-light" />
           <a
-            href={`tel:${site.phones.tolima.tel}`}
+            href={`tel:${site.phones.bogota.tel}`}
             class="text-white/90 no-underline hover:text-brand-green-light"
           >
-            Tolima: {site.phones.tolima.label}
+            Bogota: {site.phones.bogota.label}
           </a>
         </li>
         <li class="flex items-start gap-2">

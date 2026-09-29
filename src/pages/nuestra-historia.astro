@@ -1,0 +1,131 @@
+---
+import Icon from '@/components/icons/Icon.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+// Datos estructurados para la línea de tiempo de la trayectoria
+const milestones = [
+  {
+    year: "1986",
+    title: "Nacimiento bajo la Economía Solidaria",
+    date: "9 de mayo de 1986",
+    description: "La Cooperativa de Servicios de Salud Emcosalud nació de la integración cooperativa y la necesidad de ofrecer una alternativa solidaria en servicios de salud a la población asociada, en el marco del antiguo Sistema Nacional de Salud (SNS). Contó con el invaluable aporte de cooperativas pioneras como Emcofun, Utrahuilca y otras."
+  },
+  {
+    year: "1993",
+    title: "Transformación a IPS y Expansión",
+    date: "Ley 100 de 1993",
+    description: "Con la promulgación de la Ley 100 de 1993, Emcosalud se transformó de empresa intermediaria a una Institución Prestadora de Servicios de Salud (IPS). Esta evolución permitió ampliar nuestra cobertura, llegando a más afiliados y a diversas Empresas Promotoras de Salud (EPS)."
+  },
+  {
+    year: "1998 - 1999",
+    title: "La Construcción de la Clínica Propia",
+    date: "Inauguración: 27 de abril de 1999",
+    description: "A pesar de las dificultades económicas del país, Emcosalud, gracias a la persuasión de entidades financieras y el apoyo de pequeños inversionistas, inició la construcción de su propia clínica en 1998, culminando con su exitosa inauguración en abril de 1999."
+  },
+  {
+    year: "2014",
+    title: "Expansión Nacional: Cundinamarca",
+    date: "Desde el 15 de diciembre de 2014",
+    description: "Se amplió la cobertura a Cundinamarca tras adjudicarse el contrato para la prestación de servicios de salud a pensionados y beneficiarios del Fondo de Pasivo Social de Ferrocarriles Nacionales de Colombia, con presencia en Girardot y Bogotá."
+  }
+];
+---
+
+<BaseLayout
+  title="Nuestra Historia — Sociedad Clínica Emcosalud"
+  description="Conozca la trayectoria, evolución institucional, liderazgo y compromiso solidario de la Sociedad Clínica Emcosalud."
+>
+  {/* Cabecera de la sección (Hero) */}
+  <section class="bg-brand-blue py-12 text-white md:py-14">
+    <div class="container-page">
+      <p class="mb-2 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-wide text-brand-green-light">
+        <Icon name="building" size={18} />
+        Institucional
+      </p>
+      <h1 class="m-0 text-3xl font-bold md:text-4xl">Nuestra Historia</h1>
+    </div>
+  </section>
+
+  {/* Introducción General */}
+  <section class="section-block py-12">
+    <div class="container-page max-w-4xl">
+      <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-brand-sm md:p-10">
+        <p class="text-lg leading-relaxed text-slate-700 m-0">
+          Sociedad Clínica Emcosalud es una institución privada comprometida con la salud y el bienestar de la comunidad del sur colombiano, con presencia también en <strong class="text-brand-blue">Huila, Tolima, Cundinamarca</strong> y otras localidades. Presta servicios de salud de mediana y alta complejidad, integrando promoción, prevención, diagnóstico, tratamiento y rehabilitación con enfoque científico-tecnológico y estrictos estándares de calidad y calidez con respaldo humano.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  {/* Trayectoria: Línea de Tiempo */}
+  <section class="section-block bg-slate-50 py-16">
+    <div class="container-page max-w-4xl">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl font-bold text-brand-blue md:text-3xl m-0">Nuestra Trayectoria: Un Legado de Solidaridad y Crecimiento</h2>
+        <p class="text-slate-600 mt-2">Hitos clave que han marcado el desarrollo y consolidación de nuestra institución.</p>
+      </div>
+
+      <div class="grid gap-8">
+        {milestones.map((item) => (
+          <div class="flex flex-col sm:flex-row gap-6 rounded-2xl border border-slate-200 bg-white p-6 shadow-brand-sm transition hover:border-brand-green">
+            <div class="sm:w-48 flex-shrink-0 flex flex-col justify-center items-center sm:items-start bg-brand-blue/5 rounded-xl p-4 text-center sm:text-left">
+              <span class="text-xs font-bold uppercase tracking-wide text-brand-green-dark">{item.date}</span>
+              <span class="text-2xl font-extrabold text-brand-blue mt-1">{item.year}</span>
+            </div>
+            <div class="flex flex-col justify-center flex-1">
+              <h3 class="text-lg font-bold text-brand-blue m-0">{item.title}</h3>
+              <p class="text-sm text-slate-600 mt-2 leading-relaxed m-0">{item.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Impacto Social y Compromiso */}
+  <section class="section-block bg-brand-blue py-16 text-white">
+    <div class="container-page max-w-4xl text-center">
+      <h2 class="text-2xl font-bold md:text-3xl m-0">Impacto Social y Compromiso Empresarial</h2>
+      <p class="mt-4 text-brand-green-light font-medium">Un pilar fundamental del desarrollo regional y social</p>
+      
+      <p class="mt-6 text-slate-200 leading-relaxed text-base max-w-3xl mx-auto">
+        Emcosalud se ha integrado activamente en todo el sector Cooperativo, siendo asociado de Seguros La Equidad, Coopcentral, y participando en actividades gremiales y sindicales. Con una visión solidaria que rige nuestro modelo económico y social, ofrecemos a nuestros usuarios un amplio portafolio de servicios consolidado bajo los principios de oportunidad, calidez, continuidad, racionalidad e integralidad.
+      </p>
+
+      <div class="mt-10 rounded-2xl bg-white/10 p-6 backdrop-blur-md border border-white/15 max-w-2xl mx-auto">
+        <p class="text-lg font-semibold text-white m-0">
+          Cerca de 1000 familias en Huila, Tolima, Girardot y Bogotá dependen directamente de nuestra labor, consolidándonos como una vital fuente generadora de empleo y bienestar.
+        </p>
+      </div>
+    </div>
+  </section>
+
+   {/* Liderazgo Institucional */}
+  <section class="section-block py-16">
+    <div class="container-page max-w-4xl">
+      <div class="text-center mb-10">
+        <span class="inline-block rounded-full bg-brand-green/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-brand-green-dark mb-2">
+          Gobierno Corporativo
+        </span>
+        <h2 class="text-2xl font-bold text-brand-blue md:text-3xl m-0">Liderazgo con Visión Solidaria</h2>
+      </div>
+
+      <div class="rounded-2xl border border-slate-200 bg-white p-8 shadow-brand-sm md:p-10">
+        <div class="flex flex-col md:flex-row gap-8 items-center">
+          <div class="flex-1">
+            <h3 class="text-xl font-bold text-brand-blue m-0">Dr. Abel Fernely Sepúlveda Ramos</h3>
+            <p class="text-sm font-semibold text-brand-green-dark mt-1">Defensor del Modelo Solidario desde el Sector Salud — Gerente General</p>
+            <p class="text-sm text-slate-500 mt-1">En el cargo desde el 2 de julio de 1997.</p>
+            
+            <p class="text-sm text-slate-700 mt-4 leading-relaxed">
+              Médico cirujano de la Universidad Nacional de Colombia, con una destacada trayectoria y formación en administración de negocios y hospitalaria (MBA de la Universidad de los Andes, EAN, USCO). Su visión ha sido fundamental para el posicionamiento y crecimiento exponencial de la empresa.
+            </p>
+            <p class="text-sm text-slate-700 mt-3 leading-relaxed">
+              Su amplia experiencia en cargos directivos del sector salud, sumada a sus habilidades en evaluación de riesgos, planeación y administración, le han permitido guiar a Emcosalud hacia un crecimiento sostenido, afianzando su imagen regional como un baluarte indiscutible del modelo democrático y solidario de hacer empresa.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

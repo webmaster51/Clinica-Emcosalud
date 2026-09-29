@@ -1,0 +1,78 @@
+---
+const stats = [
+  { prefix: '+', value: 100, suffix: '', label: 'Especialistas' },
+  { prefix: '', value: 29000, suffix: '+', label: 'Pacientes Felices' },
+  { prefix: '+', value: 50, suffix: '', label: 'Camas Hospitalarias' },
+  { prefix: '', value: 20, suffix: ' minutos', label: 'Tiempo de Triage' },
+];
+---
+
+<section class="relative overflow-hidden bg-brand-blue py-16 text-white sm:py-20 shadow-inner">
+  <div class="container-page relative z-10 mx-auto px-4">
+    <div class="grid grid-cols-2 gap-8 md:grid-cols-4 text-center">
+      {stats.map((stat) => (
+        <div class="flex flex-col items-center justify-center">
+          <p class="text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl text-white">
+            <span>{stat.prefix}</span>
+            <span 
+              class="counter" 
+              data-target={stat.value}
+            >
+              0
+            </span>
+            <span>{stat.suffix}</span>
+          </p>
+          <p class="mt-2 text-sm font-medium text-blue-100 sm:text-base">
+            {stat.label}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  function initCounters() {
+    const counters = document.querySelectorAll('.counter');
+    if (counters.length === 0) return;
+
+    const observer = new IntersectionObserver((entries, observerInstance) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counter = entry.target as HTMLElement;
+          const targetStr = counter.getAttribute('data-target');
+          if (!targetStr) return;
+          
+          const target = parseInt(targetStr, 10);
+          let current = 0;
+          const duration = 6000; // 2 segundos
+          const increment = target / (duration / 16);
+
+          const updateCounter = () => {
+            current += increment;
+            if (current < target) {
+              counter.textContent = Math.floor(current).toLocaleString();
+              requestAnimationFrame(updateCounter);
+            } else {
+              counter.textContent = target.toLocaleString();
+            }
+          };
+
+          updateCounter();
+          observerInstance.unobserve(counter);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    counters.forEach(counter => observer.observe(counter));
+  }
+
+  // Se ejecuta en carga normal y en transiciones de página de Astro
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCounters);
+  } else {
+    initCounters();
+  }
+  
+  document.addEventListener('astro:page-load', initCounters);
+</script>

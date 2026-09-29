@@ -1,0 +1,37 @@
+---
+import Icon from '@/components/icons/Icon.astro';
+import ServicioCard from './ServicioCard.astro';
+import { clinicServices } from '@/data/services'; // Asegúrate de ajustar la ruta según la ubicación de tu archivo services.ts
+
+// Mapeamos automáticamente desde el archivo central de servicios
+const servicios = clinicServices.map((service) => ({
+  title: service.title,
+  description: service.description,
+  href: `/servicios/${service.id}/`, // Apunta automáticamente a la ruta dinámica /servicios/[slug]
+  image: service.image, // Si tu tarjeta también muestra la imagen del servicio
+}));
+---
+
+<section class="section-block" id="servicios">
+  <div class="container-page">
+    
+    <!-- Encabezado centrado con el icono y clases idénticas al diseño anterior -->
+    <div class="text-center mb-12">
+      <h2 class="section-title inline-flex items-center justify-center gap-2">
+        <Icon name="stethoscope" size={28} class="text-brand-green" />
+        Nuestros servicios
+      </h2>
+      <p class="section-lead mx-auto">
+        Atención médica integral, especializada y de alta complejidad para ti y tu familia.
+      </p>
+    </div>
+
+    <!-- Cuadrícula de tarjetas -->
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {servicios.map((s) => (
+        <ServicioCard {...s} />
+      ))}
+    </div>
+
+  </div>
+</section>

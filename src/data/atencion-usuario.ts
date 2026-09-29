@@ -2,14 +2,14 @@ import type { NavLink } from '@/data/navigation';
 
 export const atencionUsuarioAssets = {
   derechosDeberesPdf:
-    'https://emcosalud.com.co/wp-content/uploads/2025/04/Derechos-y-Deberes.pdf',
-  asociacionUsuariosImg:
-    'https://emcosalud.com.co/wp-content/uploads/2025/06/asociacion-de-usuarios.png',
+    '/public/documents/Derechos-y-Deberes.pdf',
   protocoloEnfoqueDiferencialPdf:
-    'https://emcosalud.com.co/wp-content/uploads/2025/04/PROTOCOLO-DE-ATENCION-CON-ENFOQUE-DIFERENCIAL-EMCOSALUD.pdf',
+    '/public/documents/PROTOCOLO-DE-ATENCION-CON-ENFOQUE-DIFERENCIAL-EMCOSALUD.pdf',
   resolucionEnfoqueDiferencialPdf:
-    'https://emcosalud.com.co/wp-content/uploads/2025/07/RESOLUCION-005-DE-2025_POLITICA-DE-ATENCION-CON-ENFOQUE-DIFERENCIAL-EN-EMCOSALUD.pdf',
+    '/public/documents/RESOLUCION-005-DE-2025_POLITICA-DE-ATENCION-CON-ENFOQUE-DIFERENCIAL-EN-EMCOSALUD.pdf',
 } as const;
+
+
 
 export type PromocionCampaign = {
   title: string;
@@ -74,17 +74,6 @@ export const promocionCampaigns: PromocionCampaign[] = [
   },
 ];
 
-export const humanizacionContent = {
-  title: 'Humanización',
-  description:
-    'En EMCOSALUD tenemos un compromiso firme con la humanización en la atención de salud; por eso hemos implementado nuestra política institucional.',
-  image: '/images/humanizacion/Humanizacion.jpeg',
-  imageAlt: 'Política de Humanización en Atención en Salud — EMCOSALUD',
-  resolucion: {
-    label: 'RESOLUCIÓN 004',
-    href: '/images/humanizacion/RESOLUCION-004-DE-2025_POLITICA-DE-HUMANIZACION-EN-ATENCION-EN-SALUD-EMCOSALUD.pdf',
-  },
-} as const;
 
 export const politicaEnfoqueDiferencial = {
   title: 'Política con Enfoque Diferencial',
@@ -110,78 +99,6 @@ export const politicaEnfoqueDiferencial = {
 export type BoletinIssue = {
   label: string;
   href: string;
-};
-
-export const boletinesByYear: Record<string, BoletinIssue[]> = {
-  '2024': [
-    {
-      label: 'Boletín Marzo y Abril',
-      href: 'https://emcosalud.com.co/wp-content/uploads/2025/05/Boletin-magisterio-Marzo-y-Abril.pdf',
-    },
-  ],
-  '2025': [
-   
-    {
-      label: 'Boletín Marzo',
-      href: 'https://emcosalud.com.co/wp-content/uploads/2025/05/Boletin-magisterio-Marzo-y-Abril_compressed.pdf',
-    },
-    {
-      label: 'Boletín Abril',
-      href: 'https://emcosalud.com.co/wp-content/uploads/2025/05/Boletin-magisterio-Marzo-y-Abril_compressed.pdf',
-    },
-    {
-      label: 'Boletín Mayo',
-      href: 'https://emcosalud.com.co/wp-content/uploads/2025/05/Boletin-magisterio-Mayo.pdf_compressed.pdf',
-    },
-    {
-      label: 'Boletín Junio',
-      href: 'https://emcosalud.com.co/wp-content/uploads/2025/06/boletin-usuario-magisterio-junio_compressed.pdf',
-    },
-    {
-      label: 'Boletín Julio',
-      href: 'https://emcosalud.com.co/wp-content/uploads/2025/06/boletin-usuario-magisterio-junio_compressed.pdf',
-    },
-    {
-      label: 'Boletín Agosto',
-      href: 'https://clinicaemcosalud.com/wp-content/uploads/2025/09/boletin-usuarios-magisterio-AGOSTO-2025.pdf',
-    },
-    {
-      label: 'Boletín Septiembre',
-      href: 'https://emcosalud.com.co/wp-content/uploads/2025/09/Boletin-al-usuario-magisterio-septiembre.pdf',
-    },
-    {
-      label: 'Boletín Octubre',
-      href: 'https://clinicaemcosalud.com/wp-content/uploads/2025/10/Boletin-usuarios-magisterio-octubre.pdf',
-    },
-    {
-      label: 'Boletín Noviembre',
-      href: 'https://clinicaemcosalud.com/wp-content/uploads/2025/12/Boletin-noviembre.pdf',
-    },
-    
-    
-  ],
-  '2026': [
-    {
-      label: 'Boletín Enero',
-      href: 'https://emcosalud.com.co/wp-content/uploads/2026/01/Boletin-Emcosalud-Enero-2026.pdf',
-    },
-    {
-      label: 'Boletín Febrero',
-      href: 'https://emcosalud.com.co/wp-content/uploads/2026/02/Boletin-FEBRERO-2026.pdf',
-    },
-    {
-      label: 'Boletín Marzo',
-      href: 'https://emcosalud.com.co/wp-content/uploads/2026/03/Boletin-MARZO-2026.pdf',
-    },
-    {
-      label: 'Boletín Abril',
-      href: 'https://emcosalud.com.co/wp-content/uploads/2026/05/Boletin-ABRIL-2026.pdf',
-    },
-    {
-      label: 'Boletín Mayo',
-      href: 'https://emcosalud.com.co/wp-content/uploads/2026/06/Boletin-de-Mayo-Externo.pdf',
-    },
-  ],
 };
 
 export const mejoremosJuntosContent = {
@@ -287,38 +204,61 @@ export const canalesAtencion = {
 /** Menú Atención al Usuario — emcosalud.com.co */
 export function buildAtencionUsuarioNavChildren(): NavLink[] {
   return [
-    {
-      label: 'Promoción y Mantenimiento de la Salud',
-      href: '/promocion-y-mantenimiento-de-la-salud',
+    { label: 'Derechos y Deberes', 
+      href: '/derechos-y-deberes' 
+    },
+    { label: 'Humanización', 
+      href: '/humanizacion' 
+    },
+    { label: 'Asociación de Usuarios', 
+      href: '/asociacion-de-usuarios' 
+    },
+    { label: 'Mejoremos Juntos', 
+      href: '/mejoremos-juntos' 
     },
     {
-      label: 'Canales y Puntos de Atención',
-      href: '/canales-y-puntos-de-atencion',
+      label: 'Capacitaciones',
+      children: [
+        { label: 'Capacitaciones 2027', href: '/capacitaciones/2027' },
+        { label: 'Capacitaciones 2026', href: '/capacitaciones/2026' },
+        { label: 'Capacitaciones 2025', href: '/capacitaciones/2025' },
+        { label: 'Capacitaciones 2024', href: '/capacitaciones/2024' },
+        { label: 'Capacitaciones 2023', href: '/capacitaciones/2023' },
+        { label: 'Capacitaciones 2022', href: '/capacitaciones/2022' },
+      ],
     },
-    {
-      label: 'Participación Social',
-      href: '/participacion-social',
-    },
-    { label: 'Derechos y Deberes', href: '/derechos-y-deberes' },
-    { label: 'Humanización', href: '/humanizacion' },
-    {
-      label: 'Política con Enfoque Diferencial',
-      href: '/politica-con-enfoque-diferencial',
-    },
-    { label: 'Asociación de Usuarios', href: '/asociacion-de-usuarios' },
     { label: 'Publicaciones',
       children: [
-        { label: 'Publicaciones 2026', href: '/publicaciones-2026' },
+        { label: 'Publicaciones 2027', href: '/carteleras/2027' },
+        { label: 'Publicaciones 2026', href: '/carteleras/2026' },
       ],
     },
     {
       label: 'Boletines',
       children: [
-        { label: 'Boletín 2024', href: '/boletin-2024' },
-        { label: 'Boletín 2025', href: '/boletin-2025' },
-        { label: 'Boletín 2026', href: '/boletin-2026' },
+        { label: 'Boletín 2027', href: '/boletines/2027' },
+        { label: 'Boletín 2026', href: '/boletines/2026' },
+        { label: 'Boletín 2025', href: '/boletines/2025' },
       ],
     },
-    { label: 'Mejoremos Juntos', href: '/mejoremos-juntos' },
+    {
+      label: 'Ruta de Atención Evento Salud Mental',
+      href: '/ruta-de-atencion-salud-mental',
+    },
+    {
+      label: 'Red de Atención de Urgencias Magisterio',
+      href: '/red-atencion-urgencias-magisterio',
+    },
+    
+    {
+      label: 'Horarios de Atención y Servicios',
+      href: '/horarios-de-atencion-servicios',
+    },
+    { label: 'Canales de Comunicación', 
+      href: '/canales-de-comunicacion' 
+    },
+    { label: 'Cuotras Moderadoras y Copagos', 
+      href: '/cuotas-moderadoras-copagos' 
+    },
   ];
 }

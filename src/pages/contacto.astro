@@ -1,88 +1,108 @@
 ---
-import Icon from '@/components/icons/Icon.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { site } from '@/data/site';
+import AtencionUsuarioHero from '@/components/sections/AtencionUsuarioHero.astro';
+import Icon from '@/components/icons/Icon.astro';
 ---
 
-<BaseLayout title="Contacto">
-  <section class="section">
-    <div class="container">
-      <h1 class="section__title">
-        <Icon name="mail" size={32} class="section-title-icon" />
-        Contacto
-      </h1>
-      <p class="section__lead">Comunícate con nuestras líneas y sedes de atención.</p>
-      <div class="card-grid contact-cards">
-        <div class="card contact-card">
-          <span class="contact-card__icon"><Icon name="phone" size={26} /></span>
-          <h3>Huila</h3>
-          <p>
-            <a href={`tel:${site.phones.huila.tel}`}>{site.phones.huila.label}</a>
+<BaseLayout
+  title="Contáctanos - Sedes y Canales"
+  description="Consulta nuestras sedes, direcciones y teléfonos de contacto en Neiva, Ibagué, Bogotá y Girardot — Sociedad Clínica Emcosalud."
+>
+  <AtencionUsuarioHero
+    title="Contáctanos"
+    lead="En Sociedad Clínica Emcosalud te atendemos en diferentes ciudades del país. Aquí puedes consultar nuestras sedes y canales de contacto."
+  />
+
+  <section class="section-block">
+    <div class="container-page max-w-5xl space-y-8">
+
+      {/* Grid de Sedes */}
+      <div class="grid gap-6 md:grid-cols-2">
+
+        {/* Sede Clínica Neiva */}
+        <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm space-y-3 relative overflow-hidden">
+          <div class="absolute top-0 right-0 bg-brand-green/10 text-brand-green text-xs font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">
+            Principal
+          </div>
+          <h3 class="font-bold text-brand-blue text-lg flex items-center gap-2">
+            <span class="inline-block h-3 w-3 rounded-full bg-brand-green"></span> Sede Clínica Neiva
+          </h3>
+          <ul class="space-y-2 text-sm text-slate-700 pt-1">
+            <li><strong>Dirección:</strong> Calle 5 #6-73, Neiva – Huila</li>
+            <li><strong>Servicios:</strong> Urgencias 24H</li>
+            <li><strong>Teléfono:</strong> (608) 8630566</li>
+          </ul>
+        </div>
+
+        {/* Sede Ibagué */}
+        <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm space-y-3">
+          <h3 class="font-bold text-brand-blue text-lg flex items-center gap-2">
+            <span class="inline-block h-3 w-3 rounded-full bg-brand-green"></span> Sede Ibagué
+          </h3>
+          <ul class="space-y-2 text-sm text-slate-700 pt-1">
+            <li><strong>Dirección:</strong> Carrera 8 #17-10, Barrio Interlaken</li>
+          </ul>
+        </div>
+
+        {/* Sede Bogotá – Country */}
+        <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm space-y-3">
+          <h3 class="font-bold text-brand-blue text-lg flex items-center gap-2">
+            <span class="inline-block h-3 w-3 rounded-full bg-brand-green"></span> Sede Bogotá – Country
+          </h3>
+          <ul class="space-y-2 text-sm text-slate-700 pt-1">
+            <li><strong>Dirección:</strong> Carrera 16A #85-29</li>
+            <li><strong>Teléfono:</strong> 350 214 2363</li>
+          </ul>
+        </div>
+
+        {/* Sede Bogotá – UPS */}
+        <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm space-y-3">
+          <h3 class="font-bold text-brand-blue text-lg flex items-center gap-2">
+            <span class="inline-block h-3 w-3 rounded-full bg-brand-green"></span> Sede Bogotá – UPS
+          </h3>
+          <ul class="space-y-2 text-sm text-slate-700 pt-1">
+            <li><strong>Dirección:</strong> Avenida El Dorado No. 32A – 33</li>
+            <li><strong>Teléfono:</strong> 350 214 2363</li>
+          </ul>
+        </div>
+
+        {/* Sede Girardot */}
+        <div class="rounded-xl border border-slate-200 bg-white p-6 shadow-sm space-y-3">
+          <h3 class="font-bold text-brand-blue text-lg flex items-center gap-2">
+            <span class="inline-block h-3 w-3 rounded-full bg-brand-green"></span> Sede Girardot
+          </h3>
+          <ul class="space-y-2 text-sm text-slate-700 pt-1">
+            <li><strong>Dirección:</strong> Calle 20 No. 8-28, Barrio Granada</li>
+            <li><strong>Teléfono citas:</strong> 321 906 8336</li>
+          </ul>
+        </div>
+
+        {/* Trámites Administrativos */}
+        <div class="rounded-xl border border-slate-200 bg-slate-50 p-6 shadow-sm space-y-3 flex flex-col justify-center">
+          <h3 class="font-bold text-brand-blue text-lg flex items-center gap-2">
+            <span class="inline-block h-3 w-3 rounded-full bg-brand-blue"></span> Trámites Administrativos
+          </h3>
+          <p class="text-sm text-slate-700">
+            Disponibles en todas nuestras sedes para brindarte asesoría y gestión oportuna.
           </p>
         </div>
-        <div class="card contact-card">
-          <span class="contact-card__icon"><Icon name="phone" size={26} /></span>
-          <h3>Tolima</h3>
-          <p>
-            <a href={`tel:${site.phones.tolima.tel}`}>{site.phones.tolima.label}</a>
-          </p>
-        </div>
-        <div class="card contact-card">
-          <span class="contact-card__icon"><Icon name="location" size={26} /></span>
-          <h3>Sede Neiva</h3>
-          <p>Calle 5 # 6-73, Neiva — Huila</p>
-        </div>
-        <div class="card contact-card">
-          <span class="contact-card__icon"><Icon name="hospital" size={26} /></span>
-          <h3>Clínica</h3>
-          <p>
-            <a href={site.external.clinica} target="_blank" rel="noopener noreferrer">
-              clinicaemcosalud.com
-              <Icon name="external" size={14} class="icon--inline" />
-            </a>
-          </p>
-        </div>
+
       </div>
+
+      {/* Tarjeta de Ayuda / CTA Inferior */}
+      <div class="rounded-2xl border border-slate-200 bg-brand-blue/5 p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 class="text-xl font-bold text-brand-blue mb-1">¿Tienes preguntas o necesitas ayuda?</h3>
+          <p class="text-sm text-slate-600">Nuestro equipo está listo para atenderte y resolver tus inquietudes.</p>
+        </div>
+        <a
+          href="tel:6088630566"
+          class="inline-flex items-center gap-2 rounded-xl bg-brand-blue px-6 py-3 text-sm font-semibold text-white no-underline shadow-sm transition hover:bg-brand-blue/90 shrink-0"
+        >
+          <span>Llámanos al: (608) 8630566</span>
+        </a>
+      </div>
+
     </div>
   </section>
 </BaseLayout>
-
-<style>
-  .section-title-icon {
-    color: var(--color-brand-green);
-    vertical-align: -0.35rem;
-    margin-right: 0.35rem;
-  }
-
-  .contact-card {
-    text-align: center;
-  }
-
-  .contact-card__icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 3.5rem;
-    height: 3.5rem;
-    margin-bottom: 0.75rem;
-    border-radius: 50%;
-    background: var(--color-surface-accent);
-    color: var(--color-brand-blue);
-  }
-
-  .contact-card h3 {
-    margin: 0 0 0.35rem;
-    color: var(--color-brand-blue);
-  }
-
-  .contact-card p {
-    margin: 0;
-    color: var(--color-text-muted);
-  }
-
-  .contact-card a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.25rem;
-  }
-</style>

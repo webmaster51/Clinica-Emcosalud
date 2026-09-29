@@ -1,0 +1,220 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import AtencionUsuarioHero from '@/components/sections/AtencionUsuarioHero.astro';
+---
+
+<BaseLayout
+  title="Canales de Comunicación"
+  description="Directorio de áreas, medios de contacto, teléfonos y correos de la Clínica Emcosalud."
+>
+  <AtencionUsuarioHero
+    title="Canales de Comunicación"
+    lead="Encuentra fácilmente el área y medio de contacto que necesitas en la Clínica Emcosalud."
+  />
+
+  <section class="section-block">
+    <div class="container-page max-w-5xl">
+
+      {/* Grid de Áreas y Canales de Comunicación */}
+      <div class="grid gap-6 md:grid-cols-2">
+
+        {/* Imagenología */}
+        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm space-y-3">
+          <h3 class="font-bold text-brand-blue text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> Imagenología
+          </h3>
+          <p class="text-xs text-slate-500 font-medium">Ecografías, Rayos X, Mamografías, Tomografías y Doppler.</p>
+          <ul class="space-y-1.5 text-sm text-slate-700">
+            <li><strong>WhatsApp:</strong> 3053353786</li>
+            <li><strong>Correo:</strong> recepcion.clinica@emcosalud.com</li>
+            <li><strong>Atención presencial:</strong> Calle 5 No. 6-73 (Recepción), UPS Neiva Calle 8 No. 10-45 Piso 2 Módulo 7 y 8, y UPS Pitalito, Garzón y La Plata.</li>
+            <li><strong>Requisito:</strong> Presentar orden médica y documento de identidad.</li>
+          </ul>
+        </div>
+
+        {/* Resultados Imagenología */}
+        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm space-y-3">
+          <h3 class="font-bold text-brand-blue text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> Resultados Imagenología
+          </h3>
+          <ul class="space-y-1.5 text-sm text-slate-700">
+            <li><strong>Correos:</strong><br/>coordinacion.clinica.imagenologia@emcosalud.com<br/>recepción.clinica@emcosalud.com</li>
+            <li><strong>Presencial:</strong> Calle 5 No. 6-73 (Recepción)</li>
+            <li><span class="text-xs text-brand-blue font-semibold bg-brand-blue/10 px-2 py-0.5 rounded">Nota:</span> Reclamar QR al momento del examen.</li>
+          </ul>
+        </div>
+
+        {/* Asignación de Citas */}
+        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm space-y-3">
+          <h3 class="font-bold text-brand-blue text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> Asignación de Citas
+          </h3>
+          <p class="text-xs text-slate-500 font-medium">Curaciones, Lavados de oído, Controles posquirúrgicos y retiro de puntos.</p>
+          <ul class="space-y-1.5 text-sm text-slate-700">
+            <li><strong>Presencial:</strong> Calle 5 No. 6-73 (Recepción) y UPS Neiva Calle 8 No. 10-45 Piso 2 Módulo 7 y 8.</li>
+            <li><strong>Teléfono:</strong> 8630566 (Marca 1)</li>
+            <li><strong>Horario:</strong> Lunes a Viernes | 7:00 am – 12:00 m y 2:00 pm – 5:00 pm</li>
+          </ul>
+        </div>
+
+        {/* Laboratorio Clínico */}
+        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm space-y-3">
+          <h3 class="font-bold text-brand-blue text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> Laboratorio Clínico
+          </h3>
+          <ul class="space-y-1.5 text-sm text-slate-700">
+            <li><strong>Toma de muestras:</strong> Calle 8 No. 10-45 UPS (Lunes a Viernes, 6:00 am – 8:30 am)</li>
+            <li><strong>Resultados:</strong> laboratorio.clinico@emcosalud.com</li>
+            <li><strong>Teléfono:</strong> 8630566 (Marca 2, Opción 6)</li>
+            <li><strong>Entrega presencial:</strong> 9:00 am – 10:00 am</li>
+          </ul>
+        </div>
+
+        {/* Epidemiología */}
+        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm space-y-3">
+          <h3 class="font-bold text-brand-blue text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> Epidemiología
+          </h3>
+          <ul class="space-y-1.5 text-sm text-slate-700">
+            <li><strong>Correo:</strong> unidad.epidemiologia@emcosalud.com</li>
+            <li><strong>Teléfono:</strong> 8630566 (Marca 4, Opción 8)</li>
+          </ul>
+        </div>
+
+        {/* Facturación */}
+        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm space-y-3">
+          <h3 class="font-bold text-brand-blue text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> Facturación
+          </h3>
+          <ul class="space-y-1.5 text-sm text-slate-700">
+            <li><strong>Correo:</strong> facturacion.clinica@emcosalud.com</li>
+            <li><strong>Teléfono:</strong> 8630566 (Marca 4, Opción 5)</li>
+          </ul>
+        </div>
+
+        {/* Cirugías */}
+        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm space-y-3">
+          <h3 class="font-bold text-brand-blue text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> Cirugías
+          </h3>
+          <ul class="space-y-1.5 text-sm text-slate-700">
+            <li><strong>Correo:</strong> cirugia.clinica.emcosalud@gmail.com</li>
+            <li><strong>Celular:</strong> 3125838802</li>
+            <li><strong>Teléfono:</strong> 8630566 (Marca 2, Opción 2)</li>
+          </ul>
+        </div>
+
+        {/* Hospitalización */}
+        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm space-y-3">
+          <h3 class="font-bold text-brand-blue text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> Hospitalización (3er y 4to piso)
+          </h3>
+          <ul class="space-y-1.5 text-sm text-slate-700">
+            <li><strong>Correo:</strong> hospitalizacion.emcosalud@gmail.com</li>
+            <li><strong>Teléfono:</strong> 8630566 (Marca 2, Marca 4)
+              <ul class="pl-4 mt-1 list-disc text-xs text-slate-600">
+                <li>3er piso: Opción 2</li>
+                <li>4to piso: Opción 3</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+
+        {/* UCI Neonatal */}
+        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm space-y-3">
+          <h3 class="font-bold text-brand-blue text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> UCI Neonatal
+          </h3>
+          <ul class="space-y-1.5 text-sm text-slate-700">
+            <li><strong>Correo:</strong> ucineonatal.emcosalud@gmail.com</li>
+            <li><strong>Teléfono:</strong> 8630566 (Marca 2, Opción 8)</li>
+            <li><strong>Atención:</strong> 24 horas</li>
+          </ul>
+        </div>
+
+        {/* UCI Adultos */}
+        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm space-y-3">
+          <h3 class="font-bold text-brand-blue text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> UCI Adultos
+          </h3>
+          <ul class="space-y-1.5 text-sm text-slate-700">
+            <li><strong>Correo:</strong> uciadultos.emcosalud@gmail.com</li>
+            <li><strong>Teléfono:</strong> 8630566 (Marca 2, Opción 7)</li>
+            <li><strong>Atención:</strong> 24 horas</li>
+          </ul>
+        </div>
+
+        {/* Historias Clínicas */}
+        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm space-y-3">
+          <h3 class="font-bold text-brand-blue text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> Historias Clínicas
+          </h3>
+          <ul class="space-y-1.5 text-sm text-slate-700">
+            <li><strong>Correo:</strong> archivoclin@gmail.com</li>
+          </ul>
+        </div>
+
+        {/* Urgencias */}
+        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm space-y-3">
+          <h3 class="font-bold text-brand-blue text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> Urgencias
+          </h3>
+          <ul class="space-y-1.5 text-sm text-slate-700">
+            <li><strong>Correo:</strong> urgencias.emcosalud@gmail.com</li>
+            <li><strong>Teléfono:</strong> 8630566 (Marca 2, Opción 1)</li>
+            <li><strong>Atención:</strong> 24 horas</li>
+          </ul>
+        </div>
+
+        {/* Admisiones Urgencias */}
+        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm space-y-3">
+          <h3 class="font-bold text-brand-blue text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> Admisiones Urgencias
+          </h3>
+          <ul class="space-y-1.5 text-sm text-slate-700">
+            <li><strong>Teléfono:</strong> 8630566 (Marca 4, Opción 1)</li>
+            <li><strong>Atención:</strong> 24 horas</li>
+          </ul>
+        </div>
+
+        {/* Atención al Usuario */}
+        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm space-y-3">
+          <h3 class="font-bold text-brand-blue text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> Atención al Usuario
+          </h3>
+          <ul class="space-y-1.5 text-sm text-slate-700">
+            <li><strong>Correo:</strong> atencion.usuario.clinica@emcosalud.com</li>
+            <li><strong>Teléfono:</strong> 8630566 (Marca 3)</li>
+            <li><strong>Horario:</strong> Lunes a Viernes | 7:00 am – 12:00 m y 2:00 pm – 5:00 pm</li>
+          </ul>
+        </div>
+
+        {/* Sala de Partos */}
+        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm space-y-3">
+          <h3 class="font-bold text-brand-blue text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> Sala de Partos
+          </h3>
+          <ul class="space-y-1.5 text-sm text-slate-700">
+            <li><strong>Correo:</strong> partos.clinica.emcosalud@gmail.com</li>
+            <li><strong>Teléfono:</strong> 8630566 (Marca 2, Opción 3)</li>
+            <li><strong>Atención:</strong> 24 horas</li>
+          </ul>
+        </div>
+
+        {/* Referencia y Contrarreferencia */}
+        <div class="rounded-xl border border-slate-200 bg-white p-5 shadow-sm space-y-3 md:col-span-2">
+          <h3 class="font-bold text-brand-blue text-base flex items-center gap-2 border-b border-slate-100 pb-2">
+            <span class="inline-block h-2.5 w-2.5 rounded-full bg-brand-green"></span> Referencia y Contrarreferencia
+          </h3>
+          <ul class="space-y-1.5 text-sm text-slate-700">
+            <li><strong>Correos:</strong> ryc@emcosalud.com | gestion.eventos@emcosalud.com</li>
+            <li><strong>Celulares:</strong> 3125838867 - 3219068337</li>
+            <li><strong>Atención:</strong> 24 horas</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

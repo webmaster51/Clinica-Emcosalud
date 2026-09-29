@@ -1,0 +1,82 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import AtencionUsuarioHero from '@/components/sections/AtencionUsuarioHero.astro';
+import Icon from '@/components/icons/Icon.astro';
+
+const pdfUrl = '/documents/RED-DE-ATENCION-DE-URGENCIAS-MAGISTERIO.pdf';
+const title = 'Red de Atención de Urgencias Magisterio';
+---
+
+<BaseLayout
+  title="Red de Atención de Urgencias Magisterio"
+  description="Documento oficial de la red de atención de urgencias para el Magisterio — EMCOSALUD."
+>
+  <AtencionUsuarioHero
+    title="Red de Atención de Urgencias Magisterio"
+    lead="Consulte los canales, centros adscritos y protocolos vigentes para la atención de urgencias del Magisterio."
+  />
+
+  <section class="section-block">
+    <div class="container-page max-w-5xl">
+
+      {/* Introducción / Compromiso */}
+      <div class="mb-10 rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8">
+        <h2 class="text-2xl font-bold text-brand-blue mb-4">Atención Oportuna y Especializada</h2>
+        <p class="text-slate-700 mb-4 text-base">
+          En Sociedad Clínica Emcosalud garantizamos una respuesta ágil y eficiente ante situaciones de urgencia médica para los usuarios pertenecientes al régimen del Magisterio.
+        </p>
+        <p class="text-slate-700 text-sm leading-relaxed">
+          Este documento detalla la red de prestadores habilitados, las rutas de derivación y los lineamientos establecidos para asegurar el acceso inmediato a los servicios de salud requeridos.
+        </p>
+      </div>
+
+      {/* Acciones Rápidas (Abrir / Descargar) */}
+      <div class="mb-6 flex flex-wrap items-center justify-between gap-4 rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
+        <div class="flex items-center gap-3">
+          <span class="inline-flex h-3 w-3 rounded-full bg-brand-green"></span>
+          <span class="text-sm font-bold text-brand-blue uppercase tracking-wide">Documento Oficial PDF</span>
+        </div>
+        
+        <div class="flex items-center gap-3">
+          <a
+            href={pdfUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 rounded-xl bg-brand-blue px-4 py-2 text-sm font-semibold text-white no-underline shadow-sm transition hover:bg-brand-blue/90"
+          >
+            <span>Abrir en ventana nueva</span>
+            <Icon name="external" size={16} class="shrink-0 opacity-80" />
+          </a>
+          <a
+            href={pdfUrl}
+            download
+            class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 no-underline shadow-sm transition hover:border-brand-green/40 hover:bg-brand-green/5"
+          >
+            <span>Descargar PDF</span>
+          </a>
+        </div>
+      </div>
+
+      {/* Visor Integrado del PDF */}
+      <div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
+        {/* Barra superior del visor */}
+        <div class="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-5 py-3">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">
+            Vista Previa del Documento
+          </span>
+          <span class="text-xs font-medium text-slate-400">PDF Institucional</span>
+        </div>
+
+        {/* Visor iframe limpio */}
+        <div class="relative w-full bg-slate-100" style="height: 750px;">
+          <iframe
+            src={`${pdfUrl}#view=FitH`}
+            class="h-full w-full border-0"
+            title={title}
+          />
+        </div>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>
