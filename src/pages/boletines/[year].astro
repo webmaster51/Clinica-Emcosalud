@@ -3,7 +3,8 @@ import AtencionUsuarioHero from '@/components/sections/AtencionUsuarioHero.astro
 import BoletinEditions from '@/components/sections/BoletinEditions.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 
-// Si usas output: 'server' o SSG con getStaticPaths:
+const EMCOSALUD_PORTAL_ID = 2;
+
 export async function getStaticPaths() {
   const EMCOSALUD_PORTAL_ID = 2;
   try {
@@ -55,7 +56,8 @@ const categorySlug = 'boletines';
 
   <AtencionUsuarioHero title={`Boletín ${currentYear}`} lead="Consulta y descarga las ediciones del boletín institucional." />
   
-  <BoletinEditions year={currentYear} categorySlug={categorySlug} />
+  <!-- ✅ Añadido portalId para que se envíe correctamente al componente -->
+  <BoletinEditions year={currentYear} categorySlug={categorySlug} portalId={EMCOSALUD_PORTAL_ID} />
 </BaseLayout>
 
 <script is:inline>
