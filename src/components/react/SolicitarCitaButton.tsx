@@ -1,5 +1,5 @@
 import { useEffect, useId, useRef, useState } from 'react';
-import { citasDepartmentOptions } from '@/data/citas';
+import { citasDepartmentOptions } from '@/data/examenes-preparacion';
 import Icon from '@/components/react/Icon';
 
 type Props = {

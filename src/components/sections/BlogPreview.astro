@@ -18,9 +18,20 @@ let posts: {
   imageUrl: string;
 }[] = [];
 
+const portalSlug = 
+  Astro.request.headers.get('x-portal-slug') || 
+  Astro.url.searchParams.get('portal') || 
+  'sociedad-clinica-emcosalud';
+// Obtener el número de página actual desde la URL (?page=1 por defecto)
+const pageParam = Astro.url.searchParams.get('page');
+const currentPage = pageParam ? Math.max(1, parseInt(pageParam, 10) || 1) : 1;
+const PER_PAGE = 5;
+
 try {
   // Consumimos el endpoint JSON limpio del CMS (puerto 4321) pidiendo exactamente 4 elementos
-  const response = await fetch('http://localhost:4321/api/blog.json?limit=4');
+  const response = await fetch(
+    `https://gestion.emcosalud.com.co/api/blog.json?page=${currentPage}&limit=${PER_PAGE}&portal=${portalSlug}`
+  );
 
   if (response.ok) {
     const json = await response.json();

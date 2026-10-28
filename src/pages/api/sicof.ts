@@ -57,9 +57,9 @@ export const POST: APIRoute = async ({ request }) => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'Sistema SICOF <onboarding@resend.dev>', // Cambiar por dominio verificado en prod
-        to: ['webmaster@emcosalud.com'], // Cambiar al buzón receptor final
-       // cc: ['redes.sociales@emcosalud.com'], // Recibe copia visible del mensaje inicial
+        from: 'Sistema SICOF <onboarding@gestion.emcosalud.com.co>', // Cambiar por dominio verificado en prod
+        to: ['sarlaft@emcosalud.com'], // Cambiar al buzón receptor final
+        cc: ['redes.sociales@emcosalud.com'], // Recibe copia visible del mensaje inicial
         reply_to: email,
         subject,
         headers: {

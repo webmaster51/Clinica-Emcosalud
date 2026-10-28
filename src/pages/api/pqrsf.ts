@@ -25,12 +25,9 @@ export const POST: APIRoute = async ({ request }) => {
     const document = formData.get('document')?.toString() ?? '';
     const NumDoc = formData.get('NumDoc')?.toString() ?? '';
     const department = formData.get('department')?.toString() ?? '';
-    const sedeshuila = formData.get('sedeshuila')?.toString() ?? '';
-    const sedestolima = formData.get('sedestolima')?.toString() ?? '';
     const description = formData.get('description')?.toString() ?? '';
 
-    // Determinar sede seleccionada
-    const sede = department === 'HUILA' ? sedeshuila : department === 'TOLIMA' ? sedestolima : 'No especificada';
+    
 
     // Manejo de archivo adjunto
     const file = formData.get('records') as File | null;
@@ -62,9 +59,9 @@ export const POST: APIRoute = async ({ request }) => {
         Authorization: `Bearer ${RESEND_API_KEY}`,
       },
       body: JSON.stringify({
-        from: 'Sistema PQRSF <onboarding@resend.dev>',
-        to: ['webmaster@emcosalud.com'],
-        // cc: ['redes.sociales@emcosalud.com'],
+        from: 'Sistema PQRSF <onboarding@gestion.emcosalud.com.co>',
+        to: ['atencion.usuario.clinica@emcosalud.com'],
+        cc: ['redes.sociales@emcosalud.com'],
         reply_to: email,
         subject,
         headers: {
@@ -79,10 +76,6 @@ export const POST: APIRoute = async ({ request }) => {
           <p><strong>Correo electrónico:</strong> ${email}</p>
           <p><strong>Teléfono:</strong> ${phone}</p>
           <p><strong>Dirección:</strong> ${address}</p>
-          <br />
-          <h3>Ubicación y Sede</h3>
-          <p><strong>Departamento:</strong> ${department}</p>
-          <p><strong>Sede seleccionada:</strong> ${sede}</p>
           <br />
           <h3>Detalle de la Solicitud</h3>
           <p><strong>Descripción:</strong></p>

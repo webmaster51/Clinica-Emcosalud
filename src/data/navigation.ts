@@ -179,7 +179,7 @@ export const quickAccessLinks: QuickAccessItem[] = [
   },
   {
     label: 'Portafolio de servicios',
-    href: '/documents/PORTAFOLIO-DE-SERVICIOS-SOCIEDAD-CLINICA-EMCOSALUD.pdf',
+    href: '/documents/PORTAFOLIO DE SERVICIOS CLINICA.pdf',
     external: true,
     icon: 'stethoscope',
     description: 'Conoce todos nuestros servicios y más',
